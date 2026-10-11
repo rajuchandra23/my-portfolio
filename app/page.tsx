@@ -7,9 +7,6 @@ import {
   Server, 
   Globe, 
   Mail, 
-  ExternalLink, 
-  Github, 
-  Linkedin, 
   Award, 
   Briefcase, 
   Code2,
@@ -63,7 +60,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#" className="font-bold tracking-tight text-lg text-cyan-400 flex items-center gap-2">
             <Terminal className="w-5 h-5" /> Chandra Prasad R
@@ -208,7 +205,7 @@ export default function Portfolio() {
         </h2>
         <div className="space-y-8 max-w-3xl">
           {experience.map((exp, idx) => (
-            <div key={idx} className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 relative pl-8 before:absolute before:left-3 before:top-6 before:bottom-6 before:w-0.5 before:bg-cyan-500/50">
+            <div key={idx} className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                 <h3 className="text-lg font-bold text-slate-100">{exp.role}</h3>
                 <span className="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800/50 w-fit mt-1 md:mt-0">{exp.period}</span>
@@ -227,15 +224,19 @@ export default function Portfolio() {
           <p className="text-slate-400">
             Looking for an experienced Salesforce Marketing Cloud consultant or a full-stack engineer for your next enterprise integration or web project? Let&apos;s talk.
           </p>
-          <div className="pt-4 flex justify-center gap-4">
+          <div className="pt-4 flex justify-center items-center gap-4">
             <a href="mailto:cprasadraju@gmail.com" className="px-6 py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition flex items-center gap-2">
               <Mail className="w-5 h-5" /> Email Me
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 transition">
-              <Linkedin className="w-6 h-6" />
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 transition flex items-center justify-center" aria-label="LinkedIn">
+              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 transition">
-              <Github className="w-6 h-6" />
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 transition flex items-center justify-center" aria-label="GitHub">
+              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+              </svg>
             </a>
           </div>
         </div>
@@ -243,7 +244,7 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="py-8 border-t border-slate-900 text-center text-xs text-slate-500">
-        <p>© {new Date().getFullYear()} Chandra Prasad R. Built with Next.js, Tailwind CSS & Vercel.</p>
+        <p>© 2026 Chandra Prasad R. Built with Next.js, Tailwind CSS & Vercel.</p>
       </footer>
     </div>
   );
